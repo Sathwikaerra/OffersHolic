@@ -108,7 +108,7 @@ const FAQAccordion = () => {
   };
 
   return (
-    <section id="faq" className="bg-gradient-to-r from-slate-300 via-pink-100 to-slate-100 py-16 px-6 md:px-20">
+    <section id="faq" className="bg-gradient-to-r from-slate-300 via-pink-100 to-slate-100 py-18 px-6 md:px-20">
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center"

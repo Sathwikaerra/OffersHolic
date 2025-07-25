@@ -18,7 +18,7 @@ const Sparkle = ({ className, style, delay }) => (
 const HeaderSection = () => {
   return (
     <section
-      id="Home"
+      id="home"
       className="relative w-full h-screen flex gap-4 items-center bg-gradient-to-br from-pink-200 via-white to-pink-100 overflow-hidden"
     >
       {/* Sparkles */}

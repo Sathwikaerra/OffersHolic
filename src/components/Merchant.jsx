@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const DualFeatureSectionTwo = () => {
   return (
-    <section id='merchant' className="relative w-full overflow-hidden min-h-[100vh] bg-gradient-to-r from-slate-300 via-pink-100 to-slate-100 py-16 px-6 md:px-20">
+    <section id='merchant' className="relative w-full overflow-hidden min-h-[100vh] bg-gradient-to-r from-slate-300 via-pink-100 to-slate-100 py-18 px-6 md:px-20">
       <div className="max-w-7xl mx-auto flex flex-col gap-16">
         {/* Top Heading */}
         <motion.div

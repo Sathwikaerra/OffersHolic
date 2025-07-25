@@ -18,7 +18,7 @@ const MirrorSection = () => {
   return (
     <section
       id="works"
-      className="relative w-full overflow-hidden min-h-[100vh] bg-gradient-to-r from-slate-300 via-pink-100 to-slate-100 py-12 px-6 md:px-16"
+      className="relative w-full overflow-hidden min-h-[100vh] bg-gradient-to-r from-slate-300 via-pink-100 to-slate-100 py-18 px-6 md:px-16"
     >
       {/* Sparkles */}
       <Sparkle className="top-12 left-16" delay="0s" />

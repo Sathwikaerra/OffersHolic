@@ -11,7 +11,7 @@ const features = [
   {
     title: 'Fashion & Clothing',
     desc: 'Discounts at clothing stores.',
-    img: 'https://zephyrapps.in/offersholic/wp-content/uploads/2025/02/2offersholic-e1740242130759.jpg',
+    img: '/clothing.jpeg',
   },
   {
     title: 'Jewellery',
@@ -26,12 +26,12 @@ const features = [
   {
     title: 'Health & Fitness',
     desc: 'Discounts at gyms, spas, and wellness centers.',
-    img: 'https://zephyrapps.in/offersholic/wp-content/uploads/2025/02/IMG-20250221-WA0043-e1740228293816.jpg',
+    img: '/health.jpeg',
   },
   {
     title: 'Travel & Transportation',
     desc: 'Deals on flights, train tickets, car rentals, and ride-sharing services.',
-    img: 'https://zephyrapps.in/offersholic/wp-content/uploads/2025/02/IMG-20250221-WA0046-e1740228653934.jpg',
+    img: '/travel.jpeg',
   },
   {
     title: 'Grocery & Essentials',
@@ -79,7 +79,7 @@ const DualFeatureSectionTwo = () => {
   return (
     <section
       id="category"
-      className="relative w-full overflow-hidden min-h-[100vh] bg-gradient-to-r from-slate-300 via-pink-100 to-slate-100 py-16 px-6 md:px-20"
+      className="relative w-full overflow-hidden min-h-[100vh] bg-gradient-to-r from-slate-300 via-pink-100 to-slate-100 py-18 px-6 md:px-20"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-16">
         {/* Top Heading */}
