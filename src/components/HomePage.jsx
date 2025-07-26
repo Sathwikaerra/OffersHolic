@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaGooglePlay, FaApple } from "react-icons/fa";
 
@@ -16,10 +16,23 @@ const Sparkle = ({ className, style, delay }) => (
 );
 
 const HeaderSection = () => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  // Auto flip every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFlipped(prev => !prev);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Background Images for Front and Back
+  const frontBgImage = "https://st2.depositphotos.com/40244300/42948/v/450/depositphotos_429482554-stock-illustration-dark-blue-vector-gradient-blur.jpg";
+  const backBgImage = "https://st2.depositphotos.com/40244300/42948/v/450/depositphotos_429482554-stock-illustration-dark-blue-vector-gradient-blur.jpg";
   return (
     <section
       id="home"
-      className="relative w-full h-screen flex gap-4 items-center  bg-gradient-to-br from-pink-200 via-white to-pink-100 overflow-hidden"
+      className="relative w-full h-screen flex items-center justify-center bg-gradient-to-br from-pink-200 via-white to-pink-100 overflow-hidden"
     >
       {/* Sparkles */}
       <Sparkle className="top-10 left-10" delay="0s" />
@@ -28,61 +41,74 @@ const HeaderSection = () => {
       <Sparkle className="top-[15%] right-[25%]" delay="1.8s" />
       <Sparkle className="bottom-[10%] left-[50%]" delay="2.4s" />
 
-      <div className="max-w-7xl w-full  px-8 mx-auto flex flex-col gap-4 md:flex-row items-center justify-between z-10">
-        {/* Text Section */}
+      {/* Flip Card Container */}
+      <div className="w-full max-w-4xl perspective">
         <motion.div
-          className="md:w-1/2 text-center md:text-left space-y-6"
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
+          className="relative w-full h-[500px] transition-transform duration-700 transform-style-preserve-3d"
+          animate={{ rotateY: isFlipped ? 180 : 0 }}
+          transition={{ duration: 0.6 }}
         >
-          <h1 className="text-5xl pt-[80px] md:text-6xl font-bold text-gray-900 drop-shadow-lg">
-            Welcome to <span className="text-pink-600">OffersHolic</span>
-          </h1>
-          <p className="text-lg text-gray-700 max-w-xl">
-            Discover the best deals, discounts, and exclusive offers in your city with OffersHolic, the ultimate mobile application designed to save you money and time.
-          </p>
+          {/* Front Side */}
+          <div
+            className="absolute  mx-3 inset-0 backface-hidden bg-cover bg-center rounded-xl shadow-lg p-10 flex flex-col items-center justify-center text-center"
+            style={{ backgroundImage: `url(${frontBgImage})` }}
+          >
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black opacity-30 rounded-xl z-0" />
+            <div className="relative z-10 flex items-center justify-center flex-col">
+              <p className="text-sm w-[300px] text-white font-extrabold bg-opacity-50 px-2 py-1 rounded">
+                SAVINGS APP
+              </p>
+              <h1 className="text-4xl font-bold mt-4 text-white drop-shadow-md">
+                Welcome to <span className="text-pink-300">Offersholic</span><br/><p className='text-2xl'> Your Savings Companion</p>
+              </h1>
+               
+              <p className="text-white text-center mt-6 max-w-xl bg-black bg-opacity-40 px-4 py-2 rounded">
+                Explore unbeatable real-time offers, exclusive discounts, and personalized savings tailored just for you throughout the city. Discover, save, and enjoy.
+              </p>
+            </div>
+          </div>
 
-          <div className="flex justify-center md:justify-start gap-4 mt-6 flex-wrap">
-            {/* App Store */}
-            <a
-              href="https://apps.apple.com/in/app/offersholic/id6736408497"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-white hover:text-black border transition"
-            >
-              <FaApple className="text-2xl" />
-              <span className="text-sm font-semibold">App Store</span>
-            </a>
-
-            {/* Google Play */}
-            <a
-              href="https://play.google.com/store/apps/details?id=com.zephyr.offersholic"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-white hover:text-black border transition"
-            >
-              <FaGooglePlay className="text-2xl" />
-              <span className="text-sm font-semibold">Google Play</span>
-            </a>
+          {/* Back Side */}
+          <div
+            className="absolute mx-3 inset-0 backface-hidden bg-cover bg-center rounded-xl shadow-lg p-10 flex flex-col items-center justify-center text-center transform rotate-y-180"
+            style={{ backgroundImage: `url(${backBgImage})` }}
+          >
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black opacity-30 rounded-xl z-0" />
+            <div className="relative z-10">
+              <h1 className="md:text-4xl text-lg font-bold text-white drop-shadow-md">
+                Unlock <span className="underline decoration-white">Sales Growth</span> with Us
+              </h1>
+              <p className="text-white mt-10 max-w-xl bg-black bg-opacity-40 md:px-4 md:py-2 py-1  rounded">
+                Join Offersholic and tap into a vast user base eager for the latest deals. Our app connects merchants with customers, driving increased sales and brand visibility.
+              </p>
+            </div>
           </div>
         </motion.div>
 
-        {/* Image Section */}
-        <motion.div
-          className="md:w-1/2"
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-          viewport={{ once: false, amount: 0.3 }}
-        >
-          <img
-            src="https://zephyrapps.in/offersholic/wp-content/uploads/2024/10/Untitled_design__10_-removebg-preview.png"
-            alt="OffersHolic Preview"
-            className="w-full max-w-sm mx-auto rounded-xl "
-          />
-        </motion.div>
+        {/* App Store Buttons */}
+        <div className="flex justify-center gap-4 mt-8 z-10 relative">
+          <a
+            href="https://apps.apple.com/in/app/offersholic/id6736408497"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-white hover:text-black border transition"
+          >
+            <FaApple className="text-2xl" />
+            <span className="text-sm font-semibold">App Store</span>
+          </a>
+
+          <a
+            href="https://play.google.com/store/apps/details?id=com.zephyr.offersholic"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-white hover:text-black border transition"
+          >
+            <FaGooglePlay className="text-2xl" />
+            <span className="text-sm font-semibold">Google Play</span>
+          </a>
+        </div>
       </div>
 
       {/* Sparkle Animation Style */}
@@ -93,6 +119,15 @@ const HeaderSection = () => {
         }
         .animate-twinkle {
           animation: twinkle 2.5s infinite ease-in-out;
+        }
+        .perspective {
+          perspective: 1500px;
+        }
+        .transform-style-preserve-3d {
+          transform-style: preserve-3d;
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
         }
       `}</style>
     </section>
