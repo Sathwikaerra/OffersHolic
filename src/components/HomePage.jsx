@@ -19,7 +19,7 @@ const HeaderSection = () => {
   return (
     <section
       id="home"
-      className="relative w-full h-screen flex gap-4 items-center bg-gradient-to-br from-pink-200 via-white to-pink-100 overflow-hidden"
+      className="relative w-full h-screen flex gap-4 items-center  bg-gradient-to-br from-pink-200 via-white to-pink-100 overflow-hidden"
     >
       {/* Sparkles */}
       <Sparkle className="top-10 left-10" delay="0s" />
@@ -28,7 +28,7 @@ const HeaderSection = () => {
       <Sparkle className="top-[15%] right-[25%]" delay="1.8s" />
       <Sparkle className="bottom-[10%] left-[50%]" delay="2.4s" />
 
-      <div className="max-w-7xl w-full px-8 mx-auto flex flex-col gap-4 md:flex-row items-center justify-between z-10">
+      <div className="max-w-7xl w-full  px-8 mx-auto flex flex-col gap-4 md:flex-row items-center justify-between z-10">
         {/* Text Section */}
         <motion.div
           className="md:w-1/2 text-center md:text-left space-y-6"
@@ -37,7 +37,7 @@ const HeaderSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 drop-shadow-lg">
+          <h1 className="text-5xl pt-[80px] md:text-6xl font-bold text-gray-900 drop-shadow-lg">
             Welcome to <span className="text-pink-600">OffersHolic</span>
           </h1>
           <p className="text-lg text-gray-700 max-w-xl">
@@ -78,9 +78,9 @@ const HeaderSection = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <img
-            src="/icon.jpeg"
+            src="https://zephyrapps.in/offersholic/wp-content/uploads/2024/10/Untitled_design__10_-removebg-preview.png"
             alt="OffersHolic Preview"
-            className="w-full max-w-sm mx-auto rounded-xl shadow-xl"
+            className="w-full max-w-sm mx-auto rounded-xl "
           />
         </motion.div>
       </div>
