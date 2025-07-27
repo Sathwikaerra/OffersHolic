@@ -9,7 +9,6 @@ import DualFeatureSection from './components/Merchant'
 import FourteenFeatures from './components/Category'
 import FAQAccordion from './components/Faq'
 import HeaderContactLocation from './components/Contact'
-import WhyChooseOffersholic from './components/stats'
 
 function App() {
  
@@ -18,7 +17,7 @@ function App() {
       <>
       <Navbar/>
       <HeaderSection/>
-      <WhyChooseOffersholic/>
+   
       <MirrorSection/>
       <DualFeatureSection/>
       <FourteenFeatures/>
