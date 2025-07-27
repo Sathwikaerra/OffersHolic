@@ -189,7 +189,7 @@ const Merchant = () => {
           </motion.div>
 
           <motion.h2
-              className="text-4xl text-center  md:text-5xl font-bold text-gray-800 mb-6"
+              className="text-2xl text-gray-600 text-center max-w-3xl mx-auto mb-6"
               variants={cardVariants}
             >
               Why Choose Offersholic Over Affiliate Marketing?
