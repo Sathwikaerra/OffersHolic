@@ -72,8 +72,8 @@ const HeaderContactLocation = () => {
       </div>
 
       {/* Footer bottom text */}
-      <div className="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
-        &copy; {new Date().getFullYear()} Zephyr Apps. All rights reserved.
+      <div className="mt-12 border-t border-gray-700 pt-6  text-center text-sm text-gray-400">
+        Owned by &copy; {new Date().getFullYear()} Zephyr Apps. All rights reserved.
       </div>
 
       {/* Twinkle animation style */}
